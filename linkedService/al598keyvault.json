@@ -1,0 +1,10 @@
+{
+	"name": "al598keyvault",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://al598kv.vault.azure.net/"
+		}
+	}
+}
