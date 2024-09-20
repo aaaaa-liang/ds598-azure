@@ -90,7 +90,7 @@
 											"value": "@div(sub(ticks(addDays(utcNow(),mul(-7, item()))), 18000), 10000000)",
 											"type": "Expression"
 										},
-										"datatype": "hour",
+										"dataType": "hour",
 										"appid": {
 											"value": "@activity('web weather').output.value",
 											"type": "Expression"
