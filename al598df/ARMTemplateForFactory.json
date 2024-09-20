@@ -77,7 +77,7 @@
 						"typeProperties": {
 							"method": "GET",
 							"headers": {},
-							"url": "https://al598kv/secrets/OpenWeatherAPIKey? api-version=7.0"
+							"url": "https://al598kv.vault.azure.net/secrets/alopenweathermap?api-version=7.0"
 						}
 					},
 					{
