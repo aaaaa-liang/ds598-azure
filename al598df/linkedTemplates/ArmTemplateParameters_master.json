@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "al598df"
+		},
+		"al598github_credential": {
+			"value": ""
+		},
+		"al598http_password": {
+			"value": ""
+		},
+		"al598httpair_password": {
+			"value": ""
+		},
+		"al598lake_accountKey": {
+			"value": ""
+		},
+		"al598github_properties_typeProperties_username": {
+			"value": "aaaaa-liang"
+		},
+		"al598http_properties_typeProperties_url": {
+			"value": "https://history.openweathermap.org/"
+		},
+		"al598http_properties_typeProperties_userName": {
+			"value": "annliang"
+		},
+		"al598httpair_properties_typeProperties_url": {
+			"value": "http://api.openweathermap.org/"
+		},
+		"al598httpair_properties_typeProperties_userName": {
+			"value": "annliang"
+		},
+		"al598keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://al598kv.vault.azure.net/"
+		},
+		"al598lake_properties_typeProperties_url": {
+			"value": "https://al598.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
