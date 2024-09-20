@@ -14,6 +14,12 @@
 				"type": "float",
 				"defaultValue": -71.0589
 			},
+			"start": {
+				"type": "string"
+			},
+			"end": {
+				"type": "string"
+			},
 			"appid": {
 				"type": "string"
 			}
@@ -24,7 +30,7 @@
 			"location": {
 				"type": "HttpServerLocation",
 				"relativeUrl": {
-					"value": "data/2.5/api/city?lat=@{dataset().lat}&lon=@{dataset().lon}&appid=@{dataset().appid}",
+					"value": "data/2.5/air_pollution/history?lat=@{dataset().lat}&lon=@{dataset().lon}&start=@{dataset().start}&end=@{dataset().end}&appid=@{dataset().appid}",
 					"type": "Expression"
 				}
 			}
