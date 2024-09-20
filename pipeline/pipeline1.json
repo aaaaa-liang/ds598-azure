@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"method": "GET",
-					"url": "https://al598kv/secrets/OpenWeatherAPIKey? api-version=7.0"
+					"url": "https://al598kv.vault.azure.net/"
 				}
 			},
 			{
