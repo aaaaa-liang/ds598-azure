@@ -169,7 +169,8 @@
 						"type": "string"
 					},
 					"datatype": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "hour"
 					},
 					"appid": {
 						"type": "string"
