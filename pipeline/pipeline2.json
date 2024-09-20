@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Web1",
+				"name": "web air",
 				"type": "WebActivity",
 				"dependsOn": [],
 				"policy": {
@@ -13,20 +13,68 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"method": "GET",
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://vault.azure.net"
+					}
+				}
 			},
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Web1",
+						"activity": "web air",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					}
 				],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@range(0, 2)",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy data1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "JsonSource",
+									"storeSettings": {
+										"type": "AzureBlobFSReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "JsonReadSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "Json2",
+									"type": "DatasetReference"
+								}
+							]
+						}
+					]
+				}
 			}
 		],
 		"annotations": []
