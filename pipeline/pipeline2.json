@@ -81,7 +81,11 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"lat": 42.3601,
-										"lon": -71.0589
+										"lon": -71.0589,
+										"appid": {
+											"value": "@activity('web air').output.value",
+											"type": "Expression"
+										}
 									}
 								}
 							],
