@@ -82,6 +82,14 @@
 									"parameters": {
 										"lat": 42.3601,
 										"lon": -71.0589,
+										"start": {
+											"value": "@div(sub(ticks(addDays(utcNow(),mul(-7, add(1,item())))), ticks('1970-01-01T00:00:00Z')), 10000000)",
+											"type": "Expression"
+										},
+										"end": {
+											"value": "@div(sub(ticks(addDays(utcNow(),mul(-7, item()))), ticks('1970-01-01T00:00:00Z')), 10000000)",
+											"type": "Expression"
+										},
 										"appid": {
 											"value": "@activity('web air').output.value",
 											"type": "Expression"
