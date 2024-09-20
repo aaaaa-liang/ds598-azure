@@ -109,28 +109,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"Ion": {
-				"type": "float",
-				"defaultValue": -71.0589
-			},
-			"lat": {
-				"type": "float",
-				"defaultValue": 42.3601
-			},
-			"start": {
-				"type": "string"
-			},
-			"end": {
-				"type": "string"
-			},
-			"datatype": {
-				"type": "string"
-			},
-			"appid": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
