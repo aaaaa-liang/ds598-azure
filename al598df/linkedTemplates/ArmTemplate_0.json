@@ -244,7 +244,7 @@
 					"location": {
 						"type": "HttpServerLocation",
 						"relativeUrl": {
-							"value": "data/2.5/history/city?lat=@{dataset().lat}&lon=@{dataset().lon}&appid=@{dataset().appid}",
+							"value": "data/2.5/api/city?lat=@{dataset().lat}&lon=@{dataset().lon}&appid=@{dataset().appid}",
 							"type": "Expression"
 						}
 					}
