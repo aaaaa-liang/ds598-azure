@@ -24,8 +24,8 @@
 				}
 			},
 			{
-				"name": "ForEach1",
-				"type": "ForEach",
+				"name": "Copy data1",
+				"type": "Copy",
 				"dependsOn": [
 					{
 						"activity": "web air",
@@ -34,78 +34,64 @@
 						]
 					}
 				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
 				"userProperties": [],
 				"typeProperties": {
-					"items": {
-						"value": "@range(0, 52)",
-						"type": "Expression"
-					},
-					"activities": [
-						{
-							"name": "Copy data1",
-							"type": "Copy",
-							"dependsOn": [],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"source": {
-									"type": "JsonSource",
-									"storeSettings": {
-										"type": "HttpReadSettings",
-										"requestMethod": "GET"
-									},
-									"formatSettings": {
-										"type": "JsonReadSettings"
-									}
-								},
-								"sink": {
-									"type": "JsonSink",
-									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings"
-									},
-									"formatSettings": {
-										"type": "JsonWriteSettings"
-									}
-								},
-								"enableStaging": false
-							},
-							"inputs": [
-								{
-									"referenceName": "Json3",
-									"type": "DatasetReference",
-									"parameters": {
-										"lat": 42.3601,
-										"lon": -71.0589,
-										"start": {
-											"value": "@div(sub(ticks(addDays(utcNow(),mul(-7, add(1,item())))), ticks('1970-01-01T00:00:00Z')), 10000000)",
-											"type": "Expression"
-										},
-										"end": {
-											"value": "@div(sub(ticks(addDays(utcNow(),mul(-7, item()))), ticks('1970-01-01T00:00:00Z')), 10000000)",
-											"type": "Expression"
-										},
-										"appid": {
-											"value": "@activity('web air').output.value",
-											"type": "Expression"
-										}
-									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "Json2",
-									"type": "DatasetReference"
-								}
-							]
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
 						}
-					]
-				}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Json3",
+						"type": "DatasetReference",
+						"parameters": {
+							"lat": 42.3601,
+							"lon": -71.0589,
+							"start": {
+								"value": "@div(sub(ticks(addDays(utcNow(), -365)), ticks('1970-01-01T00:00:00Z')), 10000000)",
+								"type": "Expression"
+							},
+							"end": {
+								"value": "@div(sub(ticks(utcNow()), ticks('1970-01-01T00:00:00Z')), 10000000)",
+								"type": "Expression"
+							},
+							"appid": {
+								"value": "@activity('web air').output.value",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Json4",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
