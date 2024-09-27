@@ -502,7 +502,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "Json4",
+								"referenceName": "Json2",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -516,7 +516,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Json3')]",
-				"[concat(variables('factoryId'), '/datasets/Json4')]"
+				"[concat(variables('factoryId'), '/datasets/Json2')]"
 			]
 		}
 	]
