@@ -13,13 +13,23 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "flatten1"
+				}
+			],
 			"scriptLines": [
+				"parameters{",
+				"     calctime as integer (calctime)",
+				"}",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'documentPerLine',",
-				"     wildcardPaths:['bronze / data / 2.5 / history/*.json']) ~> weathersource"
+				"     wildcardPaths:['bronze/data/2.5/ history/*.json']) ~> weathersource",
+				"weathersource foldDown(unroll(),",
+				"     skipDuplicateMapInputs: false,",
+				"     skipDuplicateMapOutputs: false) ~> flatten1"
 			]
 		}
 	}
