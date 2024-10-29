@@ -12,10 +12,26 @@
 					"name": "weathersource"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "flatten1"
+				},
+				{
+					"name": "derivedColumn1"
+				},
+				{
+					"name": "filter1"
+				},
+				{
+					"name": "derivedColumn2"
+				},
+				{
+					"name": "select1"
 				}
 			],
 			"scriptLines": [
@@ -26,10 +42,19 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'documentPerLine',",
-				"     wildcardPaths:['bronze/data/2.5/ history/*.json']) ~> weathersource",
+				"     wildcardPaths:['bronze/data/2.5/ history/*.json ']) ~> weathersource",
 				"weathersource foldDown(unroll(),",
 				"     skipDuplicateMapInputs: false,",
-				"     skipDuplicateMapOutputs: false) ~> flatten1"
+				"     skipDuplicateMapOutputs: false) ~> flatten1",
+				"flatten1 derive() ~> derivedColumn1",
+				"derivedColumn1 filter(ERROR_FUNCTION('')) ~> filter1",
+				"filter1 derive() ~> derivedColumn2",
+				"derivedColumn2 select(skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
