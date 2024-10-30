@@ -1,19 +1,19 @@
 {
-	"name": "Json2",
+	"name": "Parquet1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "al598lake",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Json",
+		"type": "Parquet",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "data/2.5/history",
-				"fileSystem": "bronze"
-			}
+				"fileSystem": "silver"
+			},
+			"compressionCodec": "snappy"
 		},
-		"schema": {}
+		"schema": []
 	}
 }
