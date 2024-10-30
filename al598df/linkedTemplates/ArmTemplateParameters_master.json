@@ -17,6 +17,9 @@
 		"al598lake_accountKey": {
 			"value": ""
 		},
+		"silver_connectionString": {
+			"value": ""
+		},
 		"al598github_properties_typeProperties_username": {
 			"value": "aaaaa-liang"
 		},

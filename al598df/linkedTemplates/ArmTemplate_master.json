@@ -23,6 +23,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'al598lake'"
 		},
+		"silver_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'silver'"
+		},
 		"al598github_properties_typeProperties_username": {
 			"type": "string",
 			"defaultValue": "aaaaa-liang"
@@ -89,6 +93,9 @@
 					},
 					"al598lake_accountKey": {
 						"value": "[parameters('al598lake_accountKey')]"
+					},
+					"silver_connectionString": {
+						"value": "[parameters('silver_connectionString')]"
 					},
 					"al598github_properties_typeProperties_username": {
 						"value": "[parameters('al598github_properties_typeProperties_username')]"
