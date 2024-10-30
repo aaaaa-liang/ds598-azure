@@ -40,7 +40,7 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          calctime as double,",
+				"          calctime as integer,",
 				"          city_id as boolean,",
 				"          cnt as short,",
 				"          cod as short,",
