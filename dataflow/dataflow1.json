@@ -39,9 +39,6 @@
 				}
 			],
 			"scriptLines": [
-				"parameters{",
-				"     calctime as integer (calctime)",
-				"}",
 				"source(output(",
 				"          calctime as double,",
 				"          city_id as boolean,",
