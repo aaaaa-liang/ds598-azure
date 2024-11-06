@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileSystem": "silver2"
+				"fileSystem": "silver"
 			},
 			"compressionCodec": "snappy"
 		},
